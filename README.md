@@ -13,3 +13,11 @@ pip install -r requirements.txt
 ```bash
 python manage.py runserver
 ```
+## To Run Docker
+```bash
+docker build -t cashier-app .
+```
+
+```bash
+docker run -v C:\cashier_data:/app/db_volume -p 8000:8000 cashier-app
+```

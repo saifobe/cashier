@@ -2,11 +2,7 @@ from django.shortcuts import render
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
-    ListAPIView,
-    RetrieveAPIView,
-    CreateAPIView,
-    UpdateAPIView,
-    DestroyAPIView
+
 )
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
