@@ -38,16 +38,13 @@ class TransactionView(ListCreateAPIView):
         serializer = PaymentSerializer(data=request.data)
 
         if serializer.is_valid():
-            # Extract payment items from the JSON payload
             payment_items = serializer.validated_data['items']
 
-            # Create a new transaction
             transaction = Transaction.objects.create(
                 cashier=request.user,
                 number_of_items=len(payment_items)
             )
 
-            # Loop through payment items and create Transaction_items
             for payment_item in payment_items:
                 product_id = payment_item['id']
                 quantity = payment_item['qty']
